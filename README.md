@@ -1,33 +1,31 @@
-Super Mario Bros Level 1
-=============
+## RingingRun
 
-An attempt to recreate the first level of Super Mario Bros.
+注：此项目尚处于故事构思中，归纳原因 -> 开发能力欠缺
+Game Design V1.0
 
-![screenshot](https://raw.github.com/justinmeister/Mario-Level-1/master/screenshot.png)
+定位：一款集乐符、跑酷、声控、像素、板绘于一体的休闲游戏，吸收部分 Mario 的特点，
 
-CONTROLS: 
+———————————————————————————————————————————————
 
-Arrow keys for direction
+人物：像素小人，跑动时会有自己的动作，根据自己的外貌自绘
 
-'a' for jump
+乐符：将 mp3 等其他格式转换成 midi ，根据 midi 文件分解出相应音符来生成各种各样自绘的乐符和图案，产生的音符按节奏分布在地图的跑道上
 
-'s' for action (fireball, run)
+跑酷：Mario 游戏特点，角色可以不跟随游戏节奏前进或者后退
 
+声控：部分模块支持麦克风来将声音反馈到游戏，以此获得更好的体验
 
-DEPENDENCIES:
+像素：全局的体验，人物跑动，招牌动作都是像素运作，仿照 Mario
 
-Pygame 1.9.1 (Python 2)
+板绘：支持素描风，漫画风，赛璐璐风，还有大爱的米山舞风格等绘画背景
 
-Pygame 1.9.2 (Python 3) - a little trickier to get going.
+—————————————————————————————————————————
 
-To install dependencies for Python 2.x:
+*技术难点*
 
-	pip install -r requirements.txt
+1.网易音乐 .npm 转换成 .mp3 后变成谱后乐器音符和和弦会变得很糟糕，对于这块可以去 爱给网下载 midi 来转换成谱，但我想用 model 来训练这项分离音频
+如此后期就可以自动接入api来添加自定义的歌曲
 
-VIDEO DEMO:
+2.python 库对 midi 处理的不是很好，不能将一首 导入的 midi 文件处理成一个音符来演奏，需要自己来重新写对应 music 的代码
 
-http://www.youtube.com/watch?v=HBbzYKMfx5Y
-   
-DISCLAIMER:
-
-This project is intended for non-commercial educational purposes.
+3.后期我想添加一部分 强化学习和深度学习的部分，深度学习来把midi里面的文件提取出来，强化学习来完成跑酷游戏的完美表现
